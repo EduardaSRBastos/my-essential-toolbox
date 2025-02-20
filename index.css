@@ -1,0 +1,75 @@
+:root {
+  --background: #648aed;
+  --main-color: #f1e96e;
+  --second-color: #fab3d5;
+  --light-color: white;
+}
+
+html {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--background) 60%, transparent),
+    var(--background)
+  );;
+  color: var(--main-color);
+  font-family: "Sour Gummy", serif;
+  margin-top: 20px;
+  height: 100%;
+  width: 100%;
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 24px;
+  margin: 10px auto 0 auto;
+  color: var(--light-color);
+}
+
+.tools-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.class-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+h4 {
+  font-size: 30px;
+  margin: 50px auto 25px auto;
+  color: var(--second-color);
+}
+
+.accordion-container {
+  background: color-mix(in srgb, var(--light-color) 30%, transparent);
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 4px 30px color-mix(in srgb, var(--light-color) 20%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  flex: 1 1 calc(30% - 30px);
+  min-width: 300px;
+  max-width: 300px;
+}
+
+object {
+  width: 100%;
+  height: fit-content;
+  padding-left: 15px;
+}
+
+h6 {
+  margin: 15px 0 10px 0;
+  font-size: 22px;
+  text-align: center;
+}

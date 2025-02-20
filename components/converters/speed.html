@@ -1,0 +1,76 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="converters.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Enter value"
+      id="from"
+      oninput="convert()"
+      onkeydown="restrictInput(event)"
+    />
+    <label id="from-label" for="from">km/h</label>
+  </div>
+
+  <p id="swap-button">⇄</p>
+
+  <div class="input-container">
+    <input type="text" placeholder="Result" id="to" disabled />
+    <label id="to-label" for="to">mph</label>
+  </div>
+</div>
+
+<script>
+  const fromInput = document.getElementById("from");
+  const toInput = document.getElementById("to");
+  const fromLabel = document.getElementById("from-label");
+  const toLabel = document.getElementById("to-label");
+
+  document.getElementById("swap-button").addEventListener("click", () => {
+    [fromLabel.textContent, toLabel.textContent] = [
+      toLabel.textContent,
+      fromLabel.textContent,
+    ];
+    [fromInput.value, toInput.value] = [toInput.value, fromInput.value];
+    convert();
+  });
+
+  function convert() {
+    const value = parseFloat(fromInput.value);
+    if (isNaN(value)) {
+      toInput.value = "";
+      return;
+    }
+
+    const conversionRate =
+      fromLabel.textContent === "km/h" ? 0.621371 : 1.60934;
+    toInput.value = Number((value * conversionRate).toFixed(3)).toString();
+  }
+
+  function restrictInput(event) {
+    const inputValue = event.target.value;
+
+    if (event.ctrlKey && event.key.length === 1) {
+      return;
+    }
+
+    if (
+      ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"].includes(
+        event.key
+      )
+    )
+      return;
+
+    if (event.key === "." && inputValue.includes(".")) {
+      event.preventDefault();
+    }
+
+    if (!/[0-9.]/.test(event.key)) {
+      event.preventDefault();
+    }
+  }
+</script>
