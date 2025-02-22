@@ -20,7 +20,7 @@
 
   <div class="input-container">
     <input type="text" placeholder="Result" id="to" disabled />
-    <label id="to-label" for="to">in</label>
+    <label id="to-label" for="to">ft</label>
   </div>
 </div>
 
@@ -46,8 +46,8 @@
       return;
     }
 
-    const conversionRate = fromLabel.textContent === "cm" ? 2.54 : 1 / 2.54;
-    toInput.value = Number((value * conversionRate).toFixed(3)).toString();
+    const conversionRate = fromLabel.textContent === "cm" ? 0.0328084 : 30.48;
+    toInput.value = Number((value * conversionRate).toFixed(2)).toString();
   }
 
   function restrictInput(event) {

@@ -1,0 +1,207 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="finance.css" />
+
+<div class="component-container">
+  <div class="grid-container">
+    <div class="input-container">
+      <label for="depositAmount">Deposit Amount</label>
+
+      <input
+        type="text"
+        placeholder="Enter deposit amount"
+        id="depositAmount"
+        oninput="formatCurrency(this); calculateTotal();"
+        onkeydown="restrictInput(event, true)"
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="termDays">Term (days)</label>
+
+      <input
+        type="text"
+        placeholder="Enter term in days"
+        id="termDays"
+        oninput="restrictToInteger(this); calculateTotal();"
+        onkeydown="restrictInput(event, false, true)"
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="interestRate">Interest Rate</label>
+
+      <input
+        type="text"
+        placeholder="Enter interest rate"
+        id="interestRate"
+        oninput="formatPercentage(this); calculateTotal();"
+        onkeydown="restrictInput(event, true)"
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="irsRate">IRS Withholding Rate</label>
+
+      <input
+        type="text"
+        placeholder="Enter IRS withholding rate"
+        id="irsRate"
+        value="28%"
+        onfocus="formatPercentage(this);"
+        oninput="formatPercentage(this); calculateTotal();"
+        onkeydown="restrictInput(event, true)"
+      />
+    </div>
+  </div>
+
+  <div class="grid-container">
+    <div class="input-container">
+      <label for="grossInterest">Gross Interest</label>
+
+      <input
+        type="text"
+        placeholder="Gross Interest"
+        id="grossInterest"
+        disabled
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="taxWithholding">Tax Withholding</label>
+
+      <input
+        type="text"
+        placeholder="Tax Withholding"
+        id="taxWithholding"
+        disabled
+      />
+    </div>
+
+    <div class="input-container">
+      <label for="netInterest">Net Interest</label>
+
+      <input type="text" placeholder="Net Interest" id="netInterest" disabled />
+    </div>
+
+    <div class="input-container">
+      <label for="total">Total</label>
+
+      <input type="text" placeholder="Total" id="total" disabled />
+    </div>
+  </div>
+</div>
+
+<script>
+  function formatCurrency(input) {
+    function applyFormat() {
+      let value = input.value.replace(/[^0-9.]/g, "");
+      if (value) {
+        input.value =
+          parseFloat(value).toLocaleString("en-US", {
+            minimumFractionDigits: value.includes(".") ? 2 : 0,
+            maximumFractionDigits: 2,
+          }) + "€";
+      }
+    }
+
+    function removeFormat() {
+      input.value = input.value.replace(/[^0-9.]/g, "");
+    }
+
+    input.addEventListener("focus", removeFormat);
+    input.addEventListener("blur", applyFormat);
+  }
+
+  function formatPercentage(input) {
+    function applyFormat() {
+      let value = input.value.replace(/[^0-9.]/g, "");
+      if (value) {
+        input.value =
+          parseFloat(value).toLocaleString("en-US", {
+            minimumFractionDigits: value.includes(".") ? 2 : 0,
+            maximumFractionDigits: 2,
+          }) + "%";
+      }
+    }
+
+    function removeFormat() {
+      input.value = input.value.replace(/%$/, "");
+    }
+
+    input.addEventListener("focus", removeFormat);
+    input.addEventListener("blur", applyFormat);
+
+    if (input.value && input.value.endsWith("%")) {
+      input.value = input.value.slice(0, -1);
+    }
+  }
+
+  function restrictToInteger(input) {
+    input.value = input.value.replace(/\D/g, "");
+  }
+
+  function restrictInput(event, allowDecimal = false, onlyInteger = false) {
+    const allowedKeys = [
+      "Backspace",
+      "Delete",
+      "ArrowLeft",
+      "ArrowRight",
+      "Tab",
+    ];
+
+    if (event.ctrlKey || event.metaKey) return;
+
+    if (!onlyInteger && event.key === "." && event.target.value.includes(".")) {
+      event.preventDefault();
+      return;
+    }
+
+    if (
+      !/[0-9]/.test(event.key) &&
+      !allowedKeys.includes(event.key) &&
+      !(allowDecimal && event.key === ".")
+    ) {
+      event.preventDefault();
+    }
+  }
+
+  function calculateTotal() {
+    const depositAmount =
+      parseFloat(
+        document.getElementById("depositAmount").value.replace(/[^0-9.]/g, "")
+      ) || 0;
+    const termDays = parseInt(document.getElementById("termDays").value) || 0;
+    const interestRate =
+      parseFloat(
+        document.getElementById("interestRate").value.replace(/%/g, "")
+      ) || 0;
+    const irsRate =
+      parseFloat(document.getElementById("irsRate").value.replace(/%/g, "")) ||
+      0;
+    let effectiveIrsRate = irsRate - 1;
+
+    if (effectiveIrsRate < 0) effectiveIrsRate = 0;
+
+    if (depositAmount === 0 || termDays === 0 || interestRate === 0) {
+      document.getElementById("grossInterest").value = "";
+      document.getElementById("taxWithholding").value = "";
+      document.getElementById("netInterest").value = "";
+      document.getElementById("total").value = "";
+      return;
+    }
+
+    let grossInterest = (depositAmount * interestRate * termDays) / (100 * 365);
+    let irsTax = (grossInterest * effectiveIrsRate) / 100;
+    let netInterest = ((grossInterest - irsTax) * 100) / 100;
+    let total = ((depositAmount + netInterest) * 100) / 100;
+
+    document.getElementById("grossInterest").value =
+      grossInterest.toFixed(2) + "€";
+    document.getElementById("taxWithholding").value = irsTax.toFixed(2) + "€";
+    document.getElementById("netInterest").value = netInterest.toFixed(2) + "€";
+    document.getElementById("total").value = total.toFixed(2) + "€";
+  }
+</script>

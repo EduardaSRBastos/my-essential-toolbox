@@ -8,39 +8,63 @@
 .component-container {
   font-family: "Sour Gummy", serif;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
 }
 
 .input-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-#from {
+#depositAmount,
+#termDays,
+#interestRate,
+#irsRate {
   background: var(--light-color);
   border: 2px solid var(--second-color);
   border-radius: 10px;
   font-family: "Sour Gummy", serif;
   font-size: 16px;
-  width: 120px;
+  width: 200px;
   height: 35px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
-#to {
+#grossInterest,
+#taxWithholding,
+#netInterest,
+#total {
   background: var(--second-color);
   border: 2px solid var(--light-color);
   border-radius: 10px;
   font-family: "Sour Gummy", serif;
   font-size: 18px;
-  width: 120px;
+  width: 200px;
   text-align: center;
   color: var(--light-color);
   font-weight: bold;
   height: 35px;
+  margin-bottom: 15px;
 }
 
-#from:focus, #to:focus {
+#grossInterest:focus,
+#taxWithholding:focus,
+#netInterest:focus,
+#total:focus,
+#depositAmount:focus,
+#termDays:focus,
+#interestRate:focus,
+#irsRate:focus {
   outline: none;
 }
 
@@ -50,10 +74,11 @@
 }
 
 label {
-  width: 50px;
+  width: 100%;
   display: inline-block;
   text-align: start;
-  margin-left: 8px;
+  margin-bottom: 5px;
+  text-wrap: nowrap;
 }
 
 #to-label {

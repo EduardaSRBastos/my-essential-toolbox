@@ -6,15 +6,89 @@
 }
 
 html {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--background) 60%, transparent),
-    var(--background)
-  );;
+  background-image: radial-gradient(
+      circle at 100% 150%,
+      var(--background) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 28%,
+      var(--background) 28%,
+      var(--background) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 40%,
+      transparent 40%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0 150%,
+      var(--background) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 28%,
+      var(--background) 28%,
+      var(--background) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 40%,
+      transparent 40%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 10%,
+      var(--background) 10%,
+      var(--background) 23%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 23%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 30%,
+      var(--background) 30%,
+      var(--background) 43%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 43%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 50%,
+      var(--background) 50%,
+      var(--background) 63%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 63%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 71%,
+      transparent 71%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 5%,
+      var(--background) 5%,
+      var(--background) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 20%,
+      var(--background) 20%,
+      var(--background) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 34%,
+      var(--background) 34%,
+      var(--background) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 49%,
+      transparent 49%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0 50%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 5%,
+      var(--background) 5%,
+      var(--background) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 20%,
+      var(--background) 20%,
+      var(--background) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 34%,
+      var(--background) 34%,
+      var(--background) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 49%,
+      transparent 49%,
+      transparent
+    );
+  background-size: 70px 35px;
   color: var(--main-color);
   font-family: "Sour Gummy", serif;
   margin-top: 20px;
-  height: 100%;
+  height: fit-content;
   width: 100%;
   margin-top: 0;
 }
@@ -54,18 +128,47 @@ h4 {
   background: color-mix(in srgb, var(--light-color) 30%, transparent);
   border-radius: 10px;
   width: 30%;
-  box-shadow: 0 4px 30px color-mix(in srgb, var(--light-color) 20%, transparent);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--background) 80%, black);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   flex: 1 1 calc(30% - 30px);
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 250px;
+  max-width: 250px;
+  height: 60px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: height 0.3s ease;
+}
+
+.accordion-container.active {
+  height: 220px;
+}
+
+.accordion-content {
+  display: none;
+  padding: 10px;
+  height: 100%;
+  padding-left: 20px;
+  cursor: default;
+}
+
+.accordion-container.active .accordion-content {
+  display: block;
+}
+
+.accordion-container.finance {
+  min-width: 500px;
+  max-width: 500px;
+  height: 60px;
+}
+
+.accordion-container.finance.active {
+  height: 400px;
 }
 
 object {
   width: 100%;
-  height: fit-content;
-  padding-left: 15px;
+  height: 100%;
 }
 
 h6 {
@@ -73,3 +176,29 @@ h6 {
   font-size: 22px;
   text-align: center;
 }
+
+h6 {
+  margin: 15px 0 10px 0;
+  font-size: 22px;
+  text-align: center;
+  position: relative;
+}
+
+.arrow {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid var(--main-color);
+  border-bottom: 2px solid var(--main-color);
+  transform: rotate(0deg);
+  position: absolute;
+  right: 20px;
+  top: 45%;
+  transform: translateY(-50%) rotate(315deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-container.active h6 .arrow {
+  transform: translateY(-10%) rotate(135deg);
+}
+
