@@ -146,9 +146,7 @@ h4 {
 
 .accordion-content {
   display: none;
-  padding: 10px;
   height: 100%;
-  padding-left: 20px;
   cursor: default;
 }
 
@@ -159,22 +157,24 @@ h4 {
 .accordion-container.finance {
   min-width: 500px;
   max-width: 500px;
-  height: 60px;
 }
 
 .accordion-container.finance.active {
   height: 400px;
 }
 
+.accordion-container.health {
+  min-width: 250px;
+  max-width: 250px;
+}
+
+.accordion-container.health.active {
+  height: 300px;
+}
+
 object {
   width: 100%;
   height: 100%;
-}
-
-h6 {
-  margin: 15px 0 10px 0;
-  font-size: 22px;
-  text-align: center;
 }
 
 h6 {
