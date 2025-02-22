@@ -155,8 +155,8 @@ h4 {
 }
 
 .accordion-container.finance {
-  min-width: 500px;
-  max-width: 500px;
+  min-width: 355px;
+  max-width: 355px;
 }
 
 .accordion-container.finance.active {

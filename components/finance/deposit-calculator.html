@@ -11,7 +11,7 @@
 
       <input
         type="text"
-        placeholder="Enter deposit amount"
+        placeholder="Enter amount"
         id="depositAmount"
         oninput="formatCurrency(this); calculateTotal();"
         onkeydown="restrictInput(event, true)"
@@ -43,11 +43,11 @@
     </div>
 
     <div class="input-container">
-      <label for="irsRate">IRS Withholding Rate</label>
+      <label for="irsRate">Tax Rate</label>
 
       <input
         type="text"
-        placeholder="Enter IRS withholding rate"
+        placeholder="Enter Tax rate"
         id="irsRate"
         value="28%"
         onfocus="formatPercentage(this);"
