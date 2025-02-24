@@ -1,0 +1,39 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="text.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <textarea
+      placeholder="Enter text"
+      id="text"
+      oninput="sortedAlphabetically()"
+      style="height: 125px;"
+    ></textarea>
+  </div>
+
+  <div class="input-container sorted-result">
+    <label style="margin-bottom: 0; text-wrap: nowrap;">Sorted Text:</label>
+    <div id="sorted-text"></div>
+  </div>
+</div>
+
+<script>
+  function sortedAlphabetically() {
+    const text = document.getElementById("text").value;
+    const words = text
+      .trim()
+      .split(/\s+/)
+      .map(word => word.replace(/[.,!?;(){}[\]"':]/g, ""))
+      .filter((word) => word !== "");
+
+    const sortedWords = words.sort((a, b) =>
+      a.toLowerCase().localeCompare(b.toLowerCase())
+    );
+    const sortedText = sortedWords.map((word) => word).join(", ");
+
+    document.getElementById("sorted-text").innerHTML = sortedText;
+  }
+</script>

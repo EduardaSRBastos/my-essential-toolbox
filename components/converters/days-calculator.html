@@ -1,0 +1,38 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="converters.css" />
+
+<div class="component-container">
+  <div class="input-container days-calculator">
+    <label for="start-date" class="label-days-calculator">Start Date</label>
+    <input type="date" id="start-date" oninput="calculateDays()" />
+  </div>
+
+  <div class="input-container days-calculator">
+    <label for="end-date" class="label-days-calculator">End Date</label>
+    <input type="date" id="end-date" oninput="calculateDays()" />
+  </div>
+
+  <div class="input-container" style="width: 80%; margin: 20px auto;">
+    <input type="text" placeholder="Result" id="result" disabled />
+    <label for="result">Days</label>
+  </div>
+</div>
+
+<script>
+  function calculateDays() {
+    const startDate = new Date(document.getElementById("start-date").value);
+    const endDate = new Date(document.getElementById("end-date").value);
+    const result = document.getElementById("result");
+
+    if (isNaN(startDate) || isNaN(endDate)) {
+      result.value = "";
+      return;
+    }
+
+    const difference = (endDate - startDate) / (1000 * 60 * 60 * 24);
+    result.value = difference >= 0 ? difference : "Invalid Date Range";
+  }
+</script>

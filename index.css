@@ -6,6 +6,12 @@
 }
 
 html {
+  text-shadow: -1px -1px 2px color-mix(in srgb, var(--background) 90%, black),
+    1px -1px 2px color-mix(in srgb, var(--background) 90%, black),
+    -1px 1px 2px color-mix(in srgb, var(--background) 90%, black),
+    1px 1px 2px color-mix(in srgb, var(--background) 90%, black),
+    -1px -1px 0 var(--background), 1px -1px 0 var(--background),
+    -1px 1px 0 var(--background), 1px 1px 0 var(--background);
   background-image: radial-gradient(
       circle at 100% 150%,
       var(--background) 24%,
@@ -93,6 +99,10 @@ html {
   margin-top: 0;
 }
 
+body {
+  margin-bottom: 50px;
+}
+
 h1 {
   text-align: center;
   font-size: 50px;
@@ -154,13 +164,29 @@ h4 {
   display: block;
 }
 
-.accordion-container.finance {
+.accordion-container.days-calculator.active {
+  height: 280px;
+}
+
+.accordion-container.finance, .accordion-container.text {
   min-width: 355px;
   max-width: 355px;
 }
 
 .accordion-container.finance.active {
   height: 400px;
+}
+
+.accordion-container.text.compare.active {
+  height: 350px;
+}
+
+.accordion-container.text.counter.active {
+  height: 410px;
+}
+
+.accordion-container.text.sort.active {
+  height: 250px;
 }
 
 .accordion-container.health {
@@ -201,4 +227,3 @@ h6 {
 .accordion-container.active h6 .arrow {
   transform: translateY(-10%) rotate(135deg);
 }
-

@@ -1,0 +1,50 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="text.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <textarea
+      placeholder="Enter text"
+      id="text"
+      oninput="countText()"
+    ></textarea>
+  </div>
+
+  <div class="input-container result">
+    <label>Characters: <span id="char-count">0</span></label>
+    <label
+      >Characters (no spaces): <span id="char-count-no-spaces">0</span></label
+    >
+    <label>Paragraphs: <span id="paragraph-count">0</span></label>
+    <label>Sentences: <span id="sentence-count">0</span></label>
+    <label>Words: <span id="word-count">0</span></label>
+  </div>
+</div>
+
+<script>
+  function countText() {
+    const text = document.getElementById("text").value;
+    const charCount = text.length;
+    const charCountNoSpaces = text.replace(/\s/g, "").length;
+    const wordCount = text
+      .trim()
+      .split(/\s+/)
+      .filter((word) => word !== "").length;
+    const sentenceCount = text
+      .split(/[.!?]+/)
+      .filter((sentence) => sentence.trim() !== "").length;
+    const paragraphCount = text
+      .split(/\n+/)
+      .filter((paragraph) => paragraph.trim() !== "").length;
+
+    document.getElementById("char-count").textContent = charCount;
+    document.getElementById("char-count-no-spaces").textContent =
+      charCountNoSpaces;
+    document.getElementById("word-count").textContent = wordCount;
+    document.getElementById("sentence-count").textContent = sentenceCount;
+    document.getElementById("paragraph-count").textContent = paragraphCount;
+  }
+</script>

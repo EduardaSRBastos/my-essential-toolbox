@@ -1,0 +1,96 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="text.css" />
+
+<div class="component-container">
+  <div style="display: flex; gap: 15px; width: 95%; margin: auto">
+    <div class="input-container">
+      <textarea
+        placeholder="Enter first text"
+        id="text1"
+        oninput="compareText()"
+      ></textarea>
+    </div>
+
+    <div class="input-container">
+      <textarea
+        placeholder="Enter second text"
+        id="text2"
+        oninput="compareText()"
+      ></textarea>
+    </div>
+  </div>
+
+  <div class="input-container result-comparison">
+    <label
+      >Comparison Result:
+      <span id="comparison-result">Waiting input</span></label
+    >
+    <div class="result-comparison">
+      <div class="comparison-container">
+        <div class="left-side">
+          <label class="compare-result">Differences:</label>
+          <div class="legend">
+            <p class="legend-text">
+              <span class="legend-box" style="background: lightgreen"></span
+              >Added text
+            </p>
+            <p class="legend-text">
+              <span class="legend-box" style="background: lightcoral"></span
+              >Removed text
+            </p>
+            <p class="legend-text">
+              <span class="legend-box" style="background: yellow"></span
+              >Modified text
+            </p>
+          </div>
+        </div>
+        <div id="differences" class="differences-output"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function compareText() {
+    const text1 = document.getElementById("text1").value;
+    const text2 = document.getElementById("text2").value;
+    const resultElement = document.getElementById("comparison-result");
+    const differencesElement = document.getElementById("differences");
+    const legendElement = document.querySelector(".legend");
+
+    if (text1 === text2) {
+      resultElement.textContent = "✅";
+      differencesElement.innerHTML = "";
+      legendElement.style.display = "none";
+      return;
+    }
+
+    resultElement.textContent = "❌";
+    differencesElement.innerHTML = highlightDifferences(text1, text2);
+    legendElement.style.display = "block";
+  }
+
+  function highlightDifferences(text1, text2) {
+    let diffHTML = "";
+    const maxLength = Math.max(text1.length, text2.length);
+
+    for (let i = 0; i < maxLength; i++) {
+      if (text1[i] !== text2[i]) {
+        if (!text1[i]) {
+          diffHTML += `<span style="color: green; background: lightgreen;">${text2[i]}</span>`;
+        } else if (!text2[i]) {
+          diffHTML += `<span style="color: darkred; background: lightcoral;">${text1[i]}</span>`;
+        } else {
+          diffHTML += `<span style="color: darkgoldenrod; background: yellow;">${text2[i]}</span>`;
+        }
+      } else {
+        diffHTML += text1[i] || "";
+      }
+    }
+
+    return diffHTML;
+  }
+</script>
