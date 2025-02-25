@@ -33,7 +33,7 @@ html {
   text-align: center;
 }
 
-/* Compare, Counter, Sort */
+/* Case Converter, Compare, Counter, Sort */
 
 .input-container {
   display: flex;
@@ -72,7 +72,7 @@ span {
   font-size: 18px;
 }
 
-/* Counter */
+/* Case Converter, Counter */
 
 .input-container.result {
   display: grid;
@@ -84,6 +84,17 @@ span {
 .input-container.result > :last-child {
   grid-column: span 2;
   justify-self: center;
+}
+
+/* Case Converter */
+
+.case-converter {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-converter:last-child {
+  padding-bottom: 50px;
 }
 
 /* Compare */

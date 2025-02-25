@@ -1,0 +1,50 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="text.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <textarea
+      placeholder="Enter text"
+      id="text"
+      oninput="convertTextCase()"
+      style="height: 30px;"
+    ></textarea>
+  </div>
+
+  <div class="input-container result">
+    <label class="case-converter">UPPERCASE: <span id="uppercase"></span></label>
+    <label class="case-converter">lowercase: <span id="lowercase"></span></label>
+    <label class="case-converter">Title Case: <span id="title-case"></span></label>
+    <label class="case-converter">Sentence case: <span id="sentence-case"></span></label>
+    <label class="case-converter">camelCase: <span id="camel-case"></span></label>
+    <label class="case-converter">snake_case: <span id="snake-case"></span></label>
+    <label class="case-converter">kebab-case: <span id="kebab-case"></span></label>
+  </div>
+</div>
+
+<script>
+  function convertTextCase() {
+    const text = document.getElementById("text").value;
+
+    document.getElementById("uppercase").textContent = text.toUpperCase();
+    document.getElementById("lowercase").textContent = text.toLowerCase();
+    document.getElementById("title-case").textContent = text
+      .toLowerCase()
+      .replace(/\b\w/g, (char) => char.toUpperCase());
+    document.getElementById("sentence-case").textContent = text
+      .toLowerCase()
+      .replace(/(^\s*\w|[.!?]\s*\w)/g, (char) => char.toUpperCase());
+    document.getElementById("camel-case").textContent = text
+      .toLowerCase()
+      .replace(/[^a-zA-Z0-9]+(.)/g, (match, char) => char.toUpperCase());
+    document.getElementById("snake-case").textContent = text
+      .toLowerCase()
+      .replace(/\s+/g, "_");
+    document.getElementById("kebab-case").textContent = text
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+  }
+</script>

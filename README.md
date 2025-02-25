@@ -20,6 +20,7 @@ This repository contains a collection of essential digital tools designed to ass
    - **Water Intake Calculator**
 
 4. **Text:**
+   - **Text Case Converter**
    - **Text Comparison**
    - **Text Counter**
    - **Text Sorter**
