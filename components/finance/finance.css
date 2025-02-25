@@ -5,6 +5,29 @@
   --light-color: white;
 }
 
+html {
+  scrollbar-color: var(--main-color) var(--second-color);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--second-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
+}
+
 .component-container {
   font-family: "Sour Gummy", serif;
   text-align: center;
@@ -13,6 +36,8 @@
   gap: 15px;
   margin: auto;
 }
+
+/* Deposit Calculator */
 
 .grid-container {
   display: grid;

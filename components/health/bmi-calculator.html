@@ -44,7 +44,14 @@
     const heightValue = parseFloat(heightInput.value);
     const weightValue = parseFloat(weightInput.value);
 
-    if (isNaN(heightValue) || isNaN(weightValue) || heightValue <= 0 || weightValue <= 0 || heightValue > 250 || weightValue > 300) {
+    if (
+      isNaN(heightValue) ||
+      isNaN(weightValue) ||
+      heightValue <= 0 ||
+      weightValue <= 0 ||
+      heightValue > 250 ||
+      weightValue > 300
+    ) {
       result.value = "";
       return;
     }
@@ -66,26 +73,6 @@
     result.value = Number(bmi.toFixed(1)).toString() + resultCategory;
   }
 
-  function restrictInput(event) {
-    const inputValue = event.target.value;
-
-    if (event.ctrlKey && event.key.length === 1) {
-      return;
-    }
-
-    if (
-      ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"].includes(
-        event.key
-      )
-    )
-      return;
-
-    if (event.key === "." && inputValue.includes(".")) {
-      event.preventDefault();
-    }
-
-    if (!/[0-9.]/.test(event.key)) {
-      event.preventDefault();
-    }
-  }
+  restrictInput(event);
 </script>
+<script src="../commonFunctions.js"></script>

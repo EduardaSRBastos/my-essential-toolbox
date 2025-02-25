@@ -97,6 +97,27 @@ html {
   height: fit-content;
   width: 100%;
   margin-top: 0;
+  overflow: scroll;
+  scrollbar-color: var(--main-color) var(--second-color);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px var(--second-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
 }
 
 body {
@@ -126,6 +147,8 @@ h3 {
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+  max-width: 1500px;
+  margin: auto;
 }
 
 h4 {
@@ -168,7 +191,8 @@ h4 {
   height: 280px;
 }
 
-.accordion-container.finance, .accordion-container.text {
+.accordion-container.finance,
+.accordion-container.text {
   min-width: 355px;
   max-width: 355px;
 }
@@ -178,7 +202,7 @@ h4 {
 }
 
 .accordion-container.text.compare.active {
-  height: 350px;
+  height: 330px;
 }
 
 .accordion-container.text.counter.active {

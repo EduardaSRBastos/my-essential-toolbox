@@ -32,6 +32,7 @@
       <div class="comparison-container">
         <div class="left-side">
           <label class="compare-result">Differences:</label>
+
           <div class="legend">
             <p class="legend-text">
               <span class="legend-box" style="background: lightgreen"></span
@@ -47,6 +48,7 @@
             </p>
           </div>
         </div>
+
         <div id="differences" class="differences-output"></div>
       </div>
     </div>
@@ -58,19 +60,30 @@
     const text1 = document.getElementById("text1").value;
     const text2 = document.getElementById("text2").value;
     const resultElement = document.getElementById("comparison-result");
-    const differencesElement = document.getElementById("differences");
+    const differencesTextElement = document.querySelector(".compare-result");
     const legendElement = document.querySelector(".legend");
+    const differencesElement = document.getElementById("differences");
 
-    if (text1 === text2) {
-      resultElement.textContent = "✅";
+    if (text1 === "" && text2 === "") {
+      resultElement.textContent = "Waiting input";
       differencesElement.innerHTML = "";
       legendElement.style.display = "none";
+      differencesTextElement.style.display = "none";
+      return;
+    } else if (text1 === text2) {
+      resultElement.textContent = "✔";
+      resultElement.style.color = "green";
+      resultElement.style.fontWeight = "bold";
+      differencesElement.innerHTML = "";
+      legendElement.style.display = "none";
+      differencesTextElement.style.display = "none";
       return;
     }
 
     resultElement.textContent = "❌";
     differencesElement.innerHTML = highlightDifferences(text1, text2);
     legendElement.style.display = "block";
+    differencesTextElement.style.display = "block";
   }
 
   function highlightDifferences(text1, text2) {
