@@ -213,13 +213,12 @@ h4 {
   height: 250px;
 }
 
-.accordion-container.health {
-  min-width: 250px;
-  max-width: 250px;
+.accordion-container.health.active {
+  height: 310px;
 }
 
-.accordion-container.health.active {
-  height: 300px;
+.accordion-container.water-intake.active {
+  height: 230px;
 }
 
 object {

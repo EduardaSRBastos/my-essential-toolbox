@@ -1,0 +1,45 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="health.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <label id="weight-label" for="weight">Weight (kg)</label>
+    <input
+      type="text"
+      placeholder="Enter weight (kg)"
+      id="weight"
+      maxlength="4"
+      oninput="calculateWaterIntake()"
+      onkeydown="restrictInput(event)"
+    />
+  </div>
+
+  <div class="input-container result">
+    <label id="water-label" for="water">Daily Water Intake</label>
+    <input type="text" placeholder="Result" id="result" disabled />
+  </div>
+</div>
+
+<script>
+  const weightInput = document.getElementById("weight");
+  const result = document.getElementById("result");
+
+  function calculateWaterIntake() {
+    const weightValue = parseFloat(weightInput.value);
+
+    if (isNaN(weightValue) || weightValue <= 0 || weightValue > 300) {
+      result.value = "";
+      return;
+    }
+
+    const waterIntake = weightValue * 0.033;
+
+    result.value = Number(waterIntake.toFixed(2)).toString() + " L/day";
+  }
+
+  restrictInput(event)
+</script>
+<script src="../commonFunctions.js"></script>

@@ -1,0 +1,61 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="converters.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Enter value"
+      id="from"
+      oninput="convert()"
+      onkeydown="restrictInput(event)"
+    />
+    <label id="from-label" for="from">Steps</label>
+  </div>
+
+  <p id="swap-button">⇄</p>
+
+  <div class="input-container">
+    <input type="text" placeholder="Result" id="to" disabled />
+    <label id="to-label" for="to">km</label>
+  </div>
+</div>
+
+<script>
+  const fromInput = document.getElementById("from");
+  const toInput = document.getElementById("to");
+  const fromLabel = document.getElementById("from-label");
+  const toLabel = document.getElementById("to-label");
+
+  document.getElementById("swap-button").addEventListener("click", () => {
+    [fromLabel.textContent, toLabel.textContent] = [
+      toLabel.textContent,
+      fromLabel.textContent,
+    ];
+    [fromInput.value, toInput.value] = [toInput.value, fromInput.value];
+    convert();
+  });
+
+  function convert() {
+    const value = parseFloat(fromInput.value);
+    if (isNaN(value)) {
+      toInput.value = "";
+      return;
+    }
+
+    let conversionRate;
+    if (fromLabel.textContent === "Steps") {
+      conversionRate = 0.00067;
+    } else {
+      conversionRate = 1 / 0.00067;
+    }
+
+    toInput.value = Number((value * conversionRate).toFixed(3)).toString();
+  }
+
+  restrictInput(event);
+</script>
+<script src="../commonFunctions.js"></script>

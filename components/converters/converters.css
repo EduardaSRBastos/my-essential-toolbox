@@ -33,7 +33,7 @@ html {
   text-align: center;
 }
 
-/* Length, Speed, Temperature, Weight */
+/* Length, Steps to Distance, Speed, Temperature, Weight */
 
 .input-container {
   display: flex;
@@ -80,7 +80,7 @@ html {
 }
 
 label {
-  width: fit-content;
+  width: 10px;
   display: inline-block;
   text-align: start;
   margin-left: 8px;
