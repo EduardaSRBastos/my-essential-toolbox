@@ -23,4 +23,5 @@ This repository contains a collection of essential digital tools designed to ass
    - **Text Case Converter**
    - **Text Comparison**
    - **Text Counter**
+   - **Password Generator**
    - **Text Sorter**

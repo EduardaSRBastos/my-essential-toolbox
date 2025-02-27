@@ -149,6 +149,61 @@ span {
   font-weight: bold;
 }
 
+/* Password Generator */
+
+.input-container.password {
+  align-items: center;
+}
+
+#password-length {
+  background: var(--light-color);
+  border: 2px solid var(--second-color);
+  border-radius: 10px;
+  font-family: "Sour Gummy", serif;
+  font-size: 16px;
+  width: 60px;
+  height: 35px;
+  text-align: center;
+}
+
+#generated-password {
+  background: var(--second-color);
+  border: 2px solid var(--light-color);
+  border-radius: 10px;
+  font-family: "Sour Gummy", serif;
+  font-size: 18px;
+  width: 160px;
+  text-align: center;
+  color: var(--light-color);
+  font-weight: bold;
+  height: 35px;
+}
+
+#password-length:focus,
+#generated-password:focus {
+  outline: none;
+}
+
+#generated-password::placeholder {
+  opacity: 1;
+  color: inherit;
+}
+
+.text-button {
+  background: color-mix(in srgb, var(--second-color) 50%, var(--light-color));
+  border: 1px solid var(--light-color);
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: "Sour Gummy", serif;
+  cursor: pointer;
+  height: 30px;
+  padding: 0 10px;
+}
+
+.text-button:hover {
+  background: var(--second-color);
+}
+
 /* Sort */
 
 .input-container.sorted-result {
