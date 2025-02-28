@@ -97,6 +97,10 @@ span {
   padding-bottom: 50px;
 }
 
+.case-converter span {
+  height: 20px;
+}
+
 /* Compare */
 
 .input-container.result-comparison {
@@ -120,7 +124,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 200px;
+  min-width: 120px;
 }
 
 .legend {
@@ -145,7 +149,8 @@ span {
 #differences {
   font-family: "Sour Gummy", serif;
   font-size: 18px;
-  white-space: pre-wrap;
+  display: flex;
+  flex-wrap: wrap;
   font-weight: bold;
 }
 
