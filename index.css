@@ -234,6 +234,15 @@ h4 {
   height: 300px;
 }
 
+.accordion-container.WHtR {
+  min-width: 320px;
+  max-width: 320px;
+}
+
+.accordion-container.WHtR.active {
+  height: 420px;
+}
+
 .accordion-container.text.password {
   min-width: 300px;
   max-width: 300px;

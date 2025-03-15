@@ -56,7 +56,7 @@ label {
   width: 75%;
 }
 
-#height, #weight {
+#height, #weight, #waist {
   background: var(--light-color);
   border: 2px solid var(--second-color);
   border-radius: 10px;
@@ -85,11 +85,24 @@ label {
   height: 35px;
 }
 
-#height:focus, #weight:focus, #result:focus {
+#height:focus, #weight:focus, #waist:focus, #result:focus {
   outline: none;
 }
 
 #result::placeholder {
   opacity: 1;
   color: inherit;
+}
+
+.ratio {
+  width: 110% !important;
+  margin-left: -20px;
+  align-content: center;
+  height: fit-content !important;
+  padding: 5px;
+}
+
+.subtext {
+  display: block;
+  font-size: 16px;
 }

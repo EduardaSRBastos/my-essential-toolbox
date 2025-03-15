@@ -17,6 +17,7 @@ This repository contains a collection of essential digital tools designed to ass
 
 ### 3. Health
 - **BMI Calculator** - Calculate Body Mass Index based on height (cm) and weight (kg).
+- **Waist to Height Ratio (WHtR)** - Estimate health risks based on your waist and height measurements (cm).
 - **Water Intake Calculator** - Determine the daily water intake based on weight (kg).
 
 ### 4. Text

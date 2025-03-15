@@ -1,0 +1,86 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="health.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <label id="height-label" for="height">Height (cm)</label>
+    <input
+      type="text"
+      placeholder="Enter height (cm)"
+      id="height"
+      maxlength="4"
+      oninput="calculateRatio()"
+      onkeydown="restrictInput(event)"
+    />
+  </div>
+
+  <div class="input-container">
+    <label id="waist-label" for="waist">Waist (cm)</label>
+    <input
+      type="text"
+      placeholder="Enter waist (cm)"
+      id="waist"
+      maxlength="4"
+      oninput="calculateRatio()"
+      onkeydown="restrictInput(event)"
+    />
+  </div>
+
+  <div class="input-container result">
+    <label id="ratio-label" for="ratio">Ratio Result</label>
+    <div id="result" class="ratio">Result</div>
+  </div>
+</div>
+
+<script>
+  const heightInput = document.getElementById("height");
+  const waistInput = document.getElementById("waist");
+  const result = document.getElementById("result");
+
+  function calculateRatio() {
+    const heightValue = parseFloat(heightInput.value);
+    const waistValue = parseFloat(waistInput.value);
+
+    if (
+      isNaN(heightValue) ||
+      isNaN(waistValue) ||
+      heightValue <= 0 ||
+      waistValue <= 0 ||
+      heightValue > 250 ||
+      waistValue > 150
+    ) {
+      result.innerHTML = "Result";
+      return;
+    }
+
+    const ratio = waistValue / heightValue;
+    let resultCategory = "";
+    if (ratio < 0.35) {
+      resultCategory =
+        " - Underweight<br><span style='font-size: 16px;'>Possible health risks - Take care</span>";
+    } else if (ratio >= 0.35 && ratio < 0.42) {
+      resultCategory =
+        " - Low weight <br><span style='font-size: 16px;'>Low risk - Ok</span>";
+    } else if (ratio >= 0.42 && ratio < 0.49) {
+      resultCategory =
+        " - Healthy <br><span style='font-size: 16px;'>No increased risk - OK</span>";
+    } else if (ratio >= 0.49 && ratio < 0.54) {
+      resultCategory =
+        " - Overweight <br><span style='font-size: 16px;'>Increased risk - Consider action</span>";
+    } else if (ratio >= 0.54 && ratio < 0.58) {
+      resultCategory =
+        " - High weight <br><span style='font-size: 16px;'>Higher risk - Take action</span>";
+    } else {
+      resultCategory =
+        " - Obese <br><span style='font-size: 16px;'>High risk - Take action</span>";
+    }
+
+    result.innerHTML = `${Number(ratio.toFixed(2))} ${resultCategory}`;
+  }
+
+  restrictInput(event);
+</script>
+<script src="../commonFunctions.js"></script>
