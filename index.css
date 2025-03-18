@@ -129,7 +129,7 @@ body {
   top: 0;
   left: 0;
   width: 300px;
-  height: 750px;
+  height: 770px;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
   display: none;
@@ -168,13 +168,11 @@ body {
   transform: rotate(-45deg) translate(10px, -6px);
 }
 
-
 #menu {
   display: none;
   list-style-type: none;
   padding: 0;
   position: fixed;
-  top: 50px;
   left: 30px;
   width: fit-content;
   z-index: 999;
@@ -189,7 +187,13 @@ body.menu-open .menu-overlay {
 }
 
 #menu li {
-  padding: 10px 0;
+  padding: 6px 0;
+}
+
+.menu-title {
+  font-size: 20px;
+  color: var(--second-color);
+  margin: 10px 0 -5px 0;
 }
 
 #menu a {
@@ -197,6 +201,7 @@ body.menu-open .menu-overlay {
   color: var(--main-color);
   text-decoration: none;
   font-size: 18px;
+  margin-left: 10px;
 }
 
 #menu a:hover {
