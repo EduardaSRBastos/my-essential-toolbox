@@ -168,21 +168,6 @@ body {
   transform: rotate(-45deg) translate(10px, -6px);
 }
 
-@media (max-width: 768px) {
-  #menu {
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-
-  #menu::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  body.menu-open {
-    overflow: hidden;
-  }
-}
-
 #menu {
   display: none;
   list-style-type: none;
@@ -252,12 +237,6 @@ h3 {
   margin: auto;
 }
 
-@media (max-width: 768px) {
-  .class-container {
-    margin: 0;
-  }
-}
-
 h4 {
   font-size: 30px;
   margin: 50px auto 20px auto;
@@ -307,6 +286,11 @@ h4 {
   height: 350px;
 }
 
+.steps-distance {
+  min-width: 270px;
+  max-width: 270px;
+}
+
 .accordion-container.finance,
 .accordion-container.text {
   min-width: 355px;
@@ -319,6 +303,15 @@ h4 {
 
 .accordion-container.finance.active {
   height: 470px;
+}
+
+.accordion-container.pomodoro-timer.active {
+  height: 250px;
+}
+
+.pomodoro-timer {
+  min-width: 270px;
+  max-width: 270px;
 }
 
 .accordion-container.text.case-converter.active {
@@ -391,4 +384,23 @@ h6 {
 
 .accordion-container.active h6 .arrow {
   transform: translateY(-10%) rotate(135deg);
+}
+
+@media (max-width: 768px) {
+  #menu {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  #menu::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .class-container {
+    margin: 0;
+  }
 }
