@@ -129,7 +129,7 @@ body {
   top: 0;
   left: 0;
   width: 300px;
-  height: 770px;
+  height: 800px;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
   display: none;
@@ -142,7 +142,7 @@ body {
   font-size: 30px;
   padding: 10px;
   position: fixed;
-  top: 10px;
+  top: 5px;
   left: 10px;
   z-index: 1000;
 }
@@ -168,14 +168,30 @@ body {
   transform: rotate(-45deg) translate(10px, -6px);
 }
 
+@media (max-width: 768px) {
+  #menu {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  #menu::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
 #menu {
   display: none;
   list-style-type: none;
   padding: 0;
   position: fixed;
   left: 30px;
-  width: fit-content;
+  width: 265px;
   z-index: 999;
+  top: 25px;
 }
 
 body.menu-open .menu-overlay {
@@ -193,7 +209,7 @@ body.menu-open .menu-overlay {
 .menu-title {
   font-size: 20px;
   color: var(--second-color);
-  margin: 10px 0 -5px 0;
+  margin: 8px 0 -5px 0;
 }
 
 #menu a {
@@ -234,6 +250,12 @@ h3 {
   justify-content: center;
   max-width: 1500px;
   margin: auto;
+}
+
+@media (max-width: 768px) {
+  .class-container {
+    margin: 0;
+  }
 }
 
 h4 {
