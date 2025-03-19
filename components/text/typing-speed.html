@@ -1,0 +1,85 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="text.css" />
+
+<div class="component-container">
+  <div class="input-container">
+    <label id="sentence-label">Type this:</label>
+    <p id="sentence"></p>
+  </div>
+
+  <div class="input-container">
+    <textarea
+      placeholder="Start typing here..."
+      id="speed-text-input"
+      oninput="startTest()"
+      rows="3"
+    ></textarea>
+  </div>
+
+  <div class="input-container flex">
+    <label>WPM: <span id="wpm">0</span></label>
+    <label>Accuracy: <span id="accuracy">0%</span></label>
+  </div>
+
+  <div class="button-container">
+    <button onclick="resetTest()" id="reset-btn">Reset</button>
+  </div>
+</div>
+
+<script>
+  const sentences = [
+    "The quick brown fox jumps over the lazy dog.",
+    "Typing speed tests measure how fast you can type.",
+    "Practice makes perfect when it comes to typing.",
+    "Speed and accuracy are key to efficient typing.",
+    "Fast typing improves productivity and efficiency.",
+    "Consistent practice leads to better typing skills.",
+    "Avoid looking at the keyboard for better speed.",
+    "Accurate typing is more important than fast typing.",
+  ];
+
+  let startTime;
+  let timerRunning = false;
+  let currentSentence = "";
+
+  function getRandomSentence() {
+    return sentences[Math.floor(Math.random() * sentences.length)];
+  }
+
+  function startTest() {
+    if (!timerRunning) {
+      startTime = new Date();
+      timerRunning = true;
+    }
+
+    const textInput = document.getElementById("speed-text-input").value;
+    const wordsTyped = textInput.trim().split(/\s+/).length;
+    const elapsedTime = (new Date() - startTime) / 1000 / 60;
+    const wpm = Math.round(wordsTyped / elapsedTime || 0);
+
+    document.getElementById("wpm").textContent = wpm;
+
+    let correctChars = 0;
+    for (let i = 0; i < textInput.length; i++) {
+      if (textInput[i] === currentSentence[i]) {
+        correctChars++;
+      }
+    }
+    const accuracy = ((correctChars / currentSentence.length) * 100).toFixed(2);
+    document.getElementById("accuracy").textContent = accuracy + "%";
+  }
+
+  function resetTest() {
+    currentSentence = getRandomSentence();
+    document.getElementById("sentence").textContent = currentSentence;
+    document.getElementById("speed-text-input").value = "";
+    document.getElementById("wpm").textContent = "0";
+    document.getElementById("accuracy").textContent = "0%";
+    timerRunning = false;
+  }
+
+  resetTest();
+</script>

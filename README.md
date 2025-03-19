@@ -30,6 +30,7 @@ This repository contains a collection of essential digital tools designed to ass
 - **Text Counter** - Count characters, words, sentences, and paragraphs.
 - **Password Generator** - Generate strong and secure passwords.
 - **Text Sorter** - Sort lines of text alphabetically or numerically.
+- **Typing Speed Test** - Test your typing speed and accuracy in real-time.
 
 ## How to Use
 Visit the live version of the toolbox here:  
