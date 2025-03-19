@@ -221,9 +221,50 @@ span {
 }
 
 #sorted-text {
-  color: white;
+  color: var(--light-color);
   font-size: 18px;
   overflow-wrap: break-word;
   max-width: 70%;
   white-space: normal;
+}
+
+/* Typing Speed */
+
+#sentence-label {
+  margin-bottom: 0;
+}
+
+#sentence {
+  color: var(--light-color);
+}
+
+#speed-text-input {
+  height: auto;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  margin: auto;
+}
+
+#reset-btn {
+  background: var(--second-color);
+  border: 2px solid var(--light-color);
+  border-radius: 10px;
+  font-family: "Sour Gummy", serif;
+  font-size: 18px;
+  width: 100px;
+  text-align: center;
+  color: var(--light-color);
+  font-weight: bold;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+#reset-btn:hover {
+  zoom: 1.05;
+  background: color-mix(in srgb, var(--second-color) 80%, var(--light-color) 20%)
 }
