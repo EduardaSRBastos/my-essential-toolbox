@@ -1,0 +1,111 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="productivity.css" />
+
+<audio id="alarm-sound" src="../../assets/403449__anez__alarm_clo.wav"></audio>
+
+<div class="component-container">
+  <div class="input-container">
+    <div id="session-type">Pomodoro</div>
+    <div id="timer-display">25:00</div>
+  </div>
+
+  <div class="button-container">
+    <button onclick="startTimer()" id="start-btn">Start</button>
+    <button onclick="pauseTimer()" id="pause-btn" disabled>Pause</button>
+    <button onclick="resetTimer()" id="reset-btn">Reset</button>
+  </div>
+</div>
+
+<script>
+  let timer;
+  let timeLeft = 25 * 60;
+  let isRunning = false;
+  let isWorkSession = true;
+  let pomodoroCount = 0;
+  const workDuration = 25 * 60;
+  const shortBreakDuration = 5 * 60;
+  const longBreakDuration = 20 * 60;
+
+  const timerDisplay = document.getElementById("timer-display");
+  const sessionType = document.getElementById("session-type");
+  const startBtn = document.getElementById("start-btn");
+  const pauseBtn = document.getElementById("pause-btn");
+  const alarmSound = document.getElementById("alarm-sound");
+
+  function updateDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    const timeString = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+    timerDisplay.innerHTML = timeString;
+
+    const pomodoroAccordion =
+      window.parent.document.getElementById("pomodoro-timer");
+
+    if (pomodoroAccordion.classList.contains("active")) {
+      window.parent.document.title = `⏳ ${timeString} - ${sessionType.textContent}`;
+    }
+  }
+
+  function startTimer() {
+    if (!isRunning) {
+      isRunning = true;
+      startBtn.disabled = true;
+      pauseBtn.disabled = false;
+
+      timer = setInterval(() => {
+        if (timeLeft > 0) {
+          timeLeft--;
+          updateDisplay();
+        } else {
+          clearInterval(timer);
+          isRunning = false;
+          alarmSound.play();
+
+          if (isWorkSession) {
+            pomodoroCount++;
+            
+            if (pomodoroCount === 4) {
+              timeLeft = longBreakDuration;
+              sessionType.innerHTML = "Long Break";
+              pomodoroCount = 0;
+            } else {
+              timeLeft = shortBreakDuration;
+              sessionType.innerHTML = "Short Break";
+            }
+          } else {
+            timeLeft = workDuration;
+            sessionType.innerHTML = "Pomodoro";
+          }
+
+          isWorkSession = !isWorkSession;
+          startBtn.disabled = false;
+          updateDisplay();
+        }
+      }, 1000);
+    }
+  }
+
+  function pauseTimer() {
+    clearInterval(timer);
+    isRunning = false;
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    isRunning = false;
+    isWorkSession = true;
+    timeLeft = workDuration;
+    sessionType.innerHTML = "Pomodoro";
+    updateDisplay();
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+  }
+
+  updateDisplay();
+</script>

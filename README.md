@@ -21,7 +21,10 @@ This repository contains a collection of essential digital tools designed to ass
 - **Waist to Height Ratio (WHtR)** - Estimate health risks based on your waist and height measurements (cm).
 - **Water Intake Calculator** - Determine the daily water intake based on weight (kg).
 
-### 4. Text
+### 4. Productivity
+- **Pomodoro Timer** - Boost productivity with the Pomodoro Technique.
+
+### 5. Text
 - **Text Case Converter** - Convert text to uppercase, lowercase, camelcase, and more.
 - **Text Comparison** - Compare two pieces of text and highlight differences.
 - **Text Counter** - Count characters, words, sentences, and paragraphs.
