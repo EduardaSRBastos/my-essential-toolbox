@@ -51,7 +51,6 @@ textarea {
   font-family: "Sour Gummy", serif;
   font-size: 16px;
   width: 100%;
-  height: 200px;
 }
 
 textarea:focus {
@@ -134,7 +133,6 @@ span {
 
 .legend-text {
   margin: 2px 0;
-
 }
 
 .legend-box {
