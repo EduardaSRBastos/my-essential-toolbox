@@ -1,0 +1,114 @@
+<link
+  href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="converters.css" />
+
+<div class="component-container grid-container">
+  <div class="flex-container">
+    <div class="input-container">
+      <input
+        type="text"
+        placeholder="Enter value"
+        id="value1"
+        oninput="calculate()"
+        onkeydown="restrictInput(event)"
+      />
+    </div>
+
+    <p>-</p>
+
+    <div class="input-container">
+      <input type="text" value="100%" id="to" disabled />
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <div class="input-container">
+      <input
+        type="text"
+        placeholder="Enter value"
+        id="value2"
+        oninput="calculate()"
+        onkeydown="restrictInput(event)"
+      />
+    </div>
+
+    <p id="swap-button" style="margin: 10px">⇄</p>
+
+    <div class="input-container">
+      <input
+        type="text"
+        placeholder="Result %"
+        id="result"
+        style="width: 120px"
+        oninput="calculate()"
+        onkeydown="restrictInput(event)"
+        disabled
+      />
+    </div>
+  </div>
+</div>
+
+<script>
+  let isSwapped = false;
+
+  document.getElementById("swap-button").addEventListener("click", () => {
+    let leftInput = document.getElementById("value2");
+    let rightInput = document.getElementById("result");
+
+    isSwapped = !isSwapped;
+
+    [leftInput.id, rightInput.id] = [rightInput.id, leftInput.id];
+
+    leftInput.value = "";
+    rightInput.value = "";
+
+    if (isSwapped) {
+      leftInput = document.getElementById("value2");
+      leftInput.removeAttribute("disabled");
+      leftInput.placeholder = "Enter % value";
+
+      leftInput.addEventListener("blur", () => {
+        if (!leftInput.value.includes("%")) {
+          leftInput.value = leftInput.value + "%";
+        }
+      });
+
+      rightInput = document.getElementById("result");
+      rightInput.setAttribute("disabled", "");
+      rightInput.style.width = "120px";
+      rightInput.placeholder = "Result";
+    } else {
+      rightInput = document.getElementById("value2");
+      rightInput.removeAttribute("disabled");
+      rightInput.placeholder = "Enter value";
+
+      leftInput = document.getElementById("result");
+      leftInput.setAttribute("disabled", "");
+      leftInput.style.width = "120px";
+      leftInput.placeholder = "Result %";
+    }
+  });
+
+  function calculate() {
+    const num1 = parseFloat(document.getElementById("value1").value);
+    const num2 = parseFloat(document.getElementById("value2").value);
+
+    if (isNaN(num1) || num1 === 0 || isNaN(num2)) {
+      document.getElementById("result").value = "";
+      return;
+    }
+
+    const calculatedValue = isSwapped
+      ? (num1 * num2) / 100
+      : (num2 * 100) / num1;
+
+    calculatedValue.value = Number(calculatedValue.toFixed(2)).toString();
+
+    document.getElementById("result").value = isSwapped
+      ? calculatedValue
+      : calculatedValue + "%";
+  }
+</script>
+<script src="../commonFunctions.js"></script>

@@ -7,6 +7,7 @@ This repository contains a collection of essential digital tools designed to ass
 ### 1. Converters
 - **Days Calculator** - Calculate the number of days between two dates.
 - **Length Converter** - Convert between centimeters and feet.
+- **Rule of Three Calculator** - Calculate proportional values using the Rule of Three.
 - **Speed Converter** - Convert between km/h and mph.
 - **Steps to Distance** - Estimate distance (km) based on the number of steps.
 - **Temperature Converter** - Convert between Celsius and Fahrenheit.

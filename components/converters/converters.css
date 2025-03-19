@@ -41,7 +41,7 @@ html {
   justify-content: center;
 }
 
-#from {
+#from, #value1, #value2 {
   background: var(--light-color);
   border: 2px solid var(--second-color);
   border-radius: 10px;
@@ -69,7 +69,8 @@ html {
 #to:focus,
 #start-date:focus,
 #end-date:focus,
-#result:focus {
+#result:focus,
+#value1:focus, #value2:focus {
   outline: none;
 }
 
@@ -144,4 +145,19 @@ label {
   color: var(--light-color);
   font-weight: bold;
   height: 35px;
+}
+
+/* Rule of three calculator */
+
+.grid-container {
+ display: grid;
+ justify-content: center;
+}
+
+.flex-container {
+  display: flex;
+}
+
+p {
+  margin: 17px;
 }

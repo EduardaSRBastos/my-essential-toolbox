@@ -49,7 +49,5 @@
     const conversionRate = fromLabel.textContent === "cm" ? 0.0328084 : 30.48;
     toInput.value = Number((value * conversionRate).toFixed(2)).toString();
   }
-
-  restrictInput(event);
 </script>
 <script src="../commonFunctions.js"></script>

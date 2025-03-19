@@ -1,4 +1,4 @@
-function restrictInput(event) {
+ function restrictInput(event) {
   const inputValue = event.target.value;
 
   if (event.ctrlKey && event.key.length === 1) {
