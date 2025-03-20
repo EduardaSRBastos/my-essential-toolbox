@@ -351,12 +351,6 @@
       document.body.classList.toggle("menu-open");
 
       hamburgerMenu.classList.toggle("active");
-
-      if (isActive) {
-        menuOverlay.style.display = "block";
-      } else {
-        menuOverlay.style.display = "none";
-      }
     }
 
     document.addEventListener("click", function (event) {
@@ -366,7 +360,6 @@
       ) {
         menu.classList.remove("active");
         document.body.classList.remove("menu-open");
-        menuOverlay.style.display = "none";
         hamburgerMenu.classList.remove("active");
       }
     });
@@ -419,12 +412,10 @@
       document.querySelectorAll(".accordion-container").forEach((acc) => {
         acc.classList.remove("active");
         const accContent = acc.querySelector(".accordion-content");
-        if (accContent) accContent.style.display = "none";
       });
 
       if (!isActive) {
         accordion.classList.add("active");
-        content.style.display = "block";
       }
 
       if (id === "pomodoro-timer" && !accordion.classList.contains("active")) {

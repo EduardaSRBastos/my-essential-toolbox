@@ -3,6 +3,7 @@
   --main-color: #f1e96e;
   --second-color: #fab3d5;
   --light-color: white;
+  interpolate-size: allow-keywords;
 }
 
 html {
@@ -97,7 +98,7 @@ html {
   height: fit-content;
   width: 100%;
   margin-top: 0;
-  overflow: scroll;
+  overflow-y: scroll;
   scrollbar-color: var(--main-color) var(--second-color);
   scrollbar-width: thin;
 }
@@ -132,8 +133,10 @@ body {
   height: 900px;
   background: rgba(0, 0, 0, 0.5);
   z-index: 998;
-  display: none;
   border-bottom-right-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
 }
 
 #hamburger-menu {
@@ -169,7 +172,6 @@ body {
 }
 
 #menu {
-  display: none;
   list-style-type: none;
   padding: 0;
   position: fixed;
@@ -177,14 +179,20 @@ body {
   width: 265px;
   z-index: 999;
   top: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
 }
 
 body.menu-open .menu-overlay {
   overflow: hidden;
+  opacity: 1;
+  visibility: visible;
 }
 
 #menu.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 #menu li {
@@ -256,7 +264,6 @@ h3 {
   height: fit-content;
   overflow: hidden;
   cursor: pointer;
-  transition: height 0.3s ease;
 }
 
 .accordion-container.active {
