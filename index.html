@@ -9,10 +9,25 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@100..900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
-    <link rel="stylesheet" href="index.css" />
+    <noscript
+      ><link
+        href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@100..900&display=swap"
+        rel="stylesheet"
+    /></noscript>
+    
+    <link
+      rel="stylesheet"
+      href="index.css"
+      media="print"
+      onload="this.onload=null;this.media='all';"
+    />
+    <noscript><link rel="stylesheet" href="index.css" /></noscript>
+
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
 
     <title>My Essential Toolbox</title>
@@ -58,21 +73,21 @@
 
     <header role="banner">
       <h1>My Essential Toolbox</h1>
-      <h3>List of essential digital tools for everyday use.</h3>
+      <h2>List of essential digital tools for everyday use.</h2>
     </header>
 
     <main id="main-content" role="main">
       <div class="tools-container">
-        <h4>Converters</h4>
+        <h3>Converters</h3>
         <div class="class-container">
           <div class="accordion-container days-calculator" id="days-calculator">
-            <h6>
+            <h4>
               <span class="accordion-title">Days Calculator</span>
               <p class="accordion-description">
                 Calculate the number of days between two dates.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object
                 data="components/converters/days-calculator.html"
@@ -81,92 +96,92 @@
           </div>
 
           <div class="accordion-container" id="length">
-            <h6>
+            <h4>
               <span class="accordion-title">Length</span>
               <p class="accordion-description">
                 Convert between centimeters and feet.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/converters/length.html"></object>
             </div>
           </div>
 
           <div class="accordion-container finance rule-3" id="rule-3">
-            <h6>
+            <h4>
               <span class="accordion-title">Rule of Three Calculator</span>
               <p class="accordion-description">
                 Calculate proportional values using the Rule of Three.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/converters/rule-3.html"></object>
             </div>
           </div>
 
           <div class="accordion-container" id="speed">
-            <h6>
+            <h4>
               <span class="accordion-title">Speed</span>
               <p class="accordion-description">Convert between km/h and mph.</p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/converters/speed.html"></object>
             </div>
           </div>
 
           <div class="accordion-container steps-distance" id="steps-distance">
-            <h6>
+            <h4>
               <span class="accordion-title">Steps to Distance</span>
               <p class="accordion-description">
                 Estimate distance (km) based on the number of steps.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/converters/steps-distance.html"></object>
             </div>
           </div>
 
           <div class="accordion-container" id="temperature">
-            <h6>
+            <h4>
               <span class="accordion-title">Temperature</span>
               <p class="accordion-description">
                 Convert between Celsius and Fahrenheit.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/converters/temperature.html"></object>
             </div>
           </div>
 
           <div class="accordion-container" id="weight">
-            <h6>
+            <h4>
               <span class="accordion-title">Weight</span>
               <p class="accordion-description">
                 Convert between kilograms and pounds.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/converters/weight.html"></object>
             </div>
           </div>
         </div>
 
-        <h4>Finance</h4>
+        <h3>Finance</h3>
         <div class="class-container">
           <div class="accordion-container finance" id="deposit-calculator">
-            <h6>
+            <h4>
               <span class="accordion-title">Term Deposit Calculator</span>
               <p class="accordion-description">
                 Calculate interest earned on term deposits over time.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object
                 data="components/finance/deposit-calculator.html"
@@ -175,23 +190,23 @@
           </div>
         </div>
 
-        <h4>Health</h4>
+        <h3>Health</h3>
         <div class="class-container">
           <div class="accordion-container health" id="bmi-calculator">
-            <h6>
+            <h4>
               <span class="accordion-title">BMI Calculator</span>
               <p class="accordion-description">
                 Calculate Body Mass Index based on height (cm) and weight (kg).
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/health/bmi-calculator.html"></object>
             </div>
           </div>
 
           <div class="accordion-container WHtR" id="waist-height-ratio">
-            <h6>
+            <h4>
               <span class="accordion-title"
                 >Waist to Height Ratio <br />
                 (WHtR)</span
@@ -201,20 +216,20 @@
                 measurements (cm).
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/health/waist-height-ratio.html"></object>
             </div>
           </div>
 
           <div class="accordion-container water-intake" id="water-intake">
-            <h6>
+            <h4>
               <span class="accordion-title">Water Intake</span>
               <p class="accordion-description">
                 Determine the daily water intake based on weight (kg).
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object
                 data="components/health/water-intake-calculator.html"
@@ -223,16 +238,16 @@
           </div>
         </div>
 
-        <h4>Productivity</h4>
+        <h3>Productivity</h3>
         <div class="class-container">
           <div class="accordion-container pomodoro-timer" id="pomodoro-timer">
-            <h6>
+            <h4>
               <span class="accordion-title">Pomodoro Timer</span>
               <p class="accordion-description">
                 Boost productivity with the Pomodoro Technique.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object
                 data="components/productivity/pomodoro-timer.html"
@@ -241,45 +256,45 @@
           </div>
         </div>
 
-        <h4>Text</h4>
+        <h3>Text</h3>
         <div class="class-container">
           <div
             class="accordion-container text case-converter"
             id="case-converter"
           >
-            <h6>
+            <h4>
               <span class="accordion-title">Case Converter</span>
               <p class="accordion-description">
                 Convert text to uppercase, lowercase, camelcase and more.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/text/case-converter.html"></object>
             </div>
           </div>
 
           <div class="accordion-container text compare" id="compare">
-            <h6>
+            <h4>
               <span class="accordion-title">Compare</span>
               <p class="accordion-description">
                 Compare two pieces of text and highlight differences.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/text/compare.html"></object>
             </div>
           </div>
 
           <div class="accordion-container text counter" id="counter">
-            <h6>
+            <h4>
               <span class="accordion-title">Counter</span>
               <p class="accordion-description">
                 Count characters, words, sentences and paragraphs.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/text/counter.html"></object>
             </div>
@@ -289,39 +304,39 @@
             class="accordion-container text password"
             id="password-generator"
           >
-            <h6>
+            <h4>
               <span class="accordion-title">Password Generator</span>
               <p class="accordion-description">
                 Generate strong and secure passwords.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/text/password-generator.html"></object>
             </div>
           </div>
 
           <div class="accordion-container text sort" id="sort">
-            <h6>
+            <h4>
               <span class="accordion-title">Sort</span>
               <p class="accordion-description">
                 Sort lines of text alphabetically or numerically.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/text/sort.html"></object>
             </div>
           </div>
 
           <div class="accordion-container text compare" id="typing-speed">
-            <h6>
+            <h4>
               <span class="accordion-title">Typing Speed Test</span>
               <p class="accordion-description">
                 Test your typing speed and accuracy in real-time.
               </p>
               <span class="arrow"></span>
-            </h6>
+            </h4>
             <div class="accordion-content">
               <object data="components/text/typing-speed.html"></object>
             </div>
@@ -425,7 +440,7 @@
       }
     }
 
-    document.querySelectorAll(".accordion-container h6").forEach((heading) => {
+    document.querySelectorAll(".accordion-container h4").forEach((heading) => {
       heading.addEventListener("click", function () {
         const accordion = this.parentElement;
         toggleAccordion(accordion.id);
