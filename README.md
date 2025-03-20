@@ -1,7 +1,20 @@
-# [Essential Digital Tools for Everyday Use](https://eduardasrbastos.github.io/my-essential-toolbox/)
+<div align="center">
+  
+# Essential Digital Tools for Everyday Use
 
-This repository contains a collection of essential digital tools designed to assist with everyday tasks.
+[![GitHub License](https://img.shields.io/github/license/EduardaSRBastos/my-essential-toolbox?style=plastic&color=darkred)](https://github.com/EduardaSRBastos/my-essential-toolbox?tab=MIT-1-ov-file)
+[![GitHub branch check runs](https://img.shields.io/github/check-runs/EduardaSRBastos/my-essential-toolbox/main?style=plastic)](https://github.com/EduardaSRBastos/my-essential-toolbox/actions)
+[![GitHub repo size](https://img.shields.io/github/repo-size/EduardaSRBastos/my-essential-toolbox?style=plastic)](https://github.com/EduardaSRBastos/my-essential-toolbox)
 
+
+<p><i>A collection of essential digital tools designed to assist with everyday tasks</i></p>
+
+<kbd>[![image](https://github.com/user-attachments/assets/995811cf-f845-48ad-82a6-3fd6ef3adb32)](https://eduardasrbastos.github.io/my-essential-toolbox)</kbd>
+
+
+
+ </div>
+ 
 ## Included Tools
 
 ### 1. Converters
@@ -33,10 +46,8 @@ This repository contains a collection of essential digital tools designed to ass
 - **Typing Speed Test** - Test your typing speed and accuracy in real-time.
 
 ## How to Use
-Visit the live version of the toolbox here:  
-🔗 **[My Essential Toolbox](https://eduardasrbastos.github.io/my-essential-toolbox/)**
-
-Simply select the tool you need, input your data, and get instant results.  
+- Visit the live version of the toolbox here: [My Essential Toolbox](https://eduardasrbastos.github.io/my-essential-toolbox/)
+- Simply select the tool you need, input your data, and get instant results.  
 
 ## Features
 - Simple and intuitive interface  
@@ -44,7 +55,8 @@ Simply select the tool you need, input your data, and get instant results.
 - Works on all modern web browsers  
 
 ## Contributing
-Feel free to suggest improvements or report any issues in the repository.
+- Support this project by giving it a star ⭐. Thanks!
+- Feel free to suggest improvements or report any issues in the repository.
 
 ## License
 This project is open-source and available under the MIT License.
