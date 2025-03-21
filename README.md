@@ -1,22 +1,34 @@
 <div align="center">
   
 # Essential Digital Tools for Everyday Use
-
 [![GitHub License](https://img.shields.io/github/license/EduardaSRBastos/my-essential-toolbox?style=plastic&color=darkred)](https://github.com/EduardaSRBastos/my-essential-toolbox?tab=MIT-1-ov-file)
 [![GitHub branch check runs](https://img.shields.io/github/check-runs/EduardaSRBastos/my-essential-toolbox/main?style=plastic)](https://github.com/EduardaSRBastos/my-essential-toolbox/actions)
 [![GitHub repo size](https://img.shields.io/github/repo-size/EduardaSRBastos/my-essential-toolbox?style=plastic)](https://github.com/EduardaSRBastos/my-essential-toolbox)
-
 
 <p><i>A collection of essential digital tools designed to assist with everyday tasks</i></p>
 
 <kbd>[![image](https://github.com/user-attachments/assets/995811cf-f845-48ad-82a6-3fd6ef3adb32)](https://eduardasrbastos.github.io/my-essential-toolbox)</kbd>
 
-
-
  </div>
- 
-## Included Tools
 
+<br>
+
+## Table of Contents
+- [Included Tools](#included-tools)
+  - [Converters](#1-converters)
+  - [Finance](#2-finance)
+  - [Health](#3-health)
+  - [Productivity](#4-productivity)
+  - [Text](#5-text)
+- [How to Use](#how-to-use)
+- [Features](#features)
+- [Performance Score](#pagespeed-insights-performance-score)
+- [Contributing](#contributing)
+- [License](#license)
+
+<br>
+
+## Included Tools
 ### 1. Converters
 - **Days Calculator** - Calculate the number of days between two dates.
 - **Length Converter** - Convert between centimeters and feet.
@@ -45,14 +57,29 @@
 - **Text Sorter** - Sort lines of text alphabetically or numerically.
 - **Typing Speed Test** - Test your typing speed and accuracy in real-time.
 
+<br>
+
 ## How to Use
-- Visit the live version of the toolbox here: [My Essential Toolbox](https://eduardasrbastos.github.io/my-essential-toolbox/)
-- Simply select the tool you need, input your data, and get instant results.  
+1. Visit the live version: [My Essential Toolbox](https://eduardasrbastos.github.io/my-essential-toolbox/)  
+2. Select the tool you need and input your data to get instant results!  
 
 ## Features
 - Simple and intuitive interface  
-- Useful calculations and conversions for daily tasks  
-- Works on all modern web browsers  
+- Useful tools for daily tasks  
+- Works on all modern web browsers
+
+<br>
+
+## PageSpeed Insights Performance Score
+<div align="center">
+  
+| Desktop | Mobile |
+|-------|-------|
+| <kbd>![image](https://github.com/user-attachments/assets/62469385-df9c-483a-9d63-bf9bf6c8b475)</kbd> | <kbd> ![image](https://github.com/user-attachments/assets/746e5aeb-761c-4edf-a98e-e56d0962046f)</kbd> |
+
+</div>
+
+<br>
 
 ## Contributing
 - Support this project by giving it a star ⭐. Thanks!
