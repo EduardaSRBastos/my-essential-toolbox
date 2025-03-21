@@ -5,7 +5,7 @@
 [![GitHub branch check runs](https://img.shields.io/github/check-runs/EduardaSRBastos/my-essential-toolbox/main?style=plastic)](https://github.com/EduardaSRBastos/my-essential-toolbox/actions)
 [![GitHub repo size](https://img.shields.io/github/repo-size/EduardaSRBastos/my-essential-toolbox?style=plastic)](https://github.com/EduardaSRBastos/my-essential-toolbox)
 
-<p><i>A collection of essential digital tools designed to assist with everyday tasks</i></p>
+<p><i>A collection of essential digital tools designed to assist with everyday tasks.</i></p>
 
 <kbd>[![image](https://github.com/user-attachments/assets/995811cf-f845-48ad-82a6-3fd6ef3adb32)](https://eduardasrbastos.github.io/my-essential-toolbox)</kbd>
 
@@ -60,13 +60,13 @@
 <br>
 
 ## How to Use
-1. Visit the live version: [My Essential Toolbox](https://eduardasrbastos.github.io/my-essential-toolbox/)  
+1. Visit the live version: [My Essential Toolbox](https://eduardasrbastos.github.io/my-essential-toolbox/).
 2. Select the tool you need and input your data to get instant results!  
 
 ## Features
-- Simple and intuitive interface  
-- Useful tools for daily tasks  
-- Works on all modern web browsers
+- Simple and intuitive interface.
+- Useful tools for daily tasks.  
+- Works on all modern web browsers.
 
 <br>
 
