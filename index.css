@@ -94,7 +94,6 @@ html {
   background-size: 70px 35px;
   color: var(--main-color);
   font-family: "Sour Gummy", serif;
-  margin-top: 20px;
   height: fit-content;
   width: 100%;
   margin-top: 0;
@@ -322,11 +321,11 @@ h3 {
 }
 
 .accordion-container.text.case-converter.active {
-  height: 400px;
+  height: 420px;
 }
 
 .accordion-container.text.compare.active {
-  height: 420px;
+  height: 430px;
 }
 
 .accordion-container.text.counter.active {
@@ -334,7 +333,7 @@ h3 {
 }
 
 .accordion-container.text.sort.active {
-  height: 320px;
+  height: 340px;
 }
 
 .accordion-container.health.active {

@@ -5,6 +5,23 @@
 <link rel="stylesheet" href="text.css" />
 
 <div class="component-container" style="height: 320px; overflow-y: auto;">
+  <!-- Open in a new tab -->
+  <a
+    href="#"
+    onclick="window.open(window.location.pathname, '_blank')"
+    rel="noopener noreferrer"
+    class="open-new-tab"
+    title="Open in a new tab"
+    style="top: -10px;"
+    >⇱</a
+  >
+  <script type="module">
+    import { handleNewTabPage } from "../commonFunctions.js";
+
+    handleNewTabPage();
+  </script>
+
+  <!-- Common Structure -->
   <div style="display: flex; gap: 15px; width: 95%; margin: auto">
     <div class="input-container">
       <textarea
