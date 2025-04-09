@@ -336,6 +336,10 @@
         </div>
       </div>
     </main>
+
+    <footer>
+      © <span id="year"></span> <a href="https://github.com/EduardaSRBastos" target="_blank">Eduarda Bastos</a>. Licensed under the MIT License.
+    </footer>
   </body>
 </html>
 
@@ -429,5 +433,8 @@
         toggleAccordion(accordion.id);
       });
     });
+
+    
+    document.getElementById("year").textContent = new Date().getFullYear();
   });
 </script>
