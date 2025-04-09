@@ -120,10 +120,6 @@ html {
   background: var(--main-color);
 }
 
-body {
-  margin-bottom: 50px;
-}
-
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -390,6 +386,15 @@ h4 {
 
 .accordion-container.active h4 .arrow {
   transform: translateY(-10%) rotate(135deg);
+}
+
+footer {
+  text-align: center;
+  margin: 50px auto 25px auto;
+}
+
+footer a {
+  color: var(--main-color);
 }
 
 @media (max-width: 768px) {

@@ -4,7 +4,7 @@
 />
 <link rel="stylesheet" href="text.css" />
 
-<div class="component-container" style="height: 250px; overflow-y: auto;">
+<div class="component-container" style="height: 250px; overflow-y: auto">
   <!-- Open in a new tab -->
   <a
     href="#"
@@ -12,7 +12,7 @@
     rel="noopener noreferrer"
     class="open-new-tab"
     title="Open in a new tab"
-    style="top: -10px;"
+    style="top: -10px"
     >⇱</a
   >
   <script type="module">
@@ -49,8 +49,8 @@
     const sortedWords = words.sort((a, b) =>
       a.toLowerCase().localeCompare(b.toLowerCase())
     );
-    const sortedText = sortedWords.map((word) => word).join(", ");
 
-    document.getElementById("sorted-text").innerHTML = sortedText;
+    const listItems = sortedWords.map((word) => `<li>${word}</li>`).join("");
+    document.getElementById("sorted-text").innerHTML = `<ol>${listItems}</ol>`;
   }
 </script>
