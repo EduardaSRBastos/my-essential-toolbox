@@ -10,6 +10,156 @@ html {
   scrollbar-width: thin;
 }
 
+.open-new-tab {
+  transform: scale(-1, 1);
+  display: inline-block;
+  font-size: 25px;
+  color: var(--light-color);
+  text-decoration: none;
+  position: relative;
+  right: -150px;
+  top: -16px;
+  transition: 0.1s ease-in-out;
+  margin-bottom: -5px;
+}
+
+.open-new-tab:hover {
+  zoom: 1.03;
+  right: -146px;
+  color: var(--second-color);
+}
+
+body.new-tab {
+  background-image: radial-gradient(
+      circle at 100% 150%,
+      var(--background) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 28%,
+      var(--background) 28%,
+      var(--background) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 40%,
+      transparent 40%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0 150%,
+      var(--background) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 24%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 28%,
+      var(--background) 28%,
+      var(--background) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 36%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 40%,
+      transparent 40%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 50% 100%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 10%,
+      var(--background) 10%,
+      var(--background) 23%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 23%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 30%,
+      var(--background) 30%,
+      var(--background) 43%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 43%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 50%,
+      var(--background) 50%,
+      var(--background) 63%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 63%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 71%,
+      transparent 71%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 100% 50%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 5%,
+      var(--background) 5%,
+      var(--background) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 20%,
+      var(--background) 20%,
+      var(--background) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 34%,
+      var(--background) 34%,
+      var(--background) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 49%,
+      transparent 49%,
+      transparent
+    ),
+    radial-gradient(
+      circle at 0 50%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 5%,
+      var(--background) 5%,
+      var(--background) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 15%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 20%,
+      var(--background) 20%,
+      var(--background) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 29%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 34%,
+      var(--background) 34%,
+      var(--background) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 44%,
+      color-mix(in srgb, var(--background) 80%, var(--light-color)) 49%,
+      transparent 49%,
+      transparent
+    );
+  background-size: 70px 35px;
+  height: fit-content;
+  width: 100%;
+  margin-top: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.new-tab h1 {
+  font-family: "Sour Gummy", serif;
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  text-shadow: -1px -1px 2px color-mix(in srgb, var(--background) 90%, black),
+    1px -1px 2px color-mix(in srgb, var(--background) 90%, black),
+    -1px 1px 2px color-mix(in srgb, var(--background) 90%, black),
+    1px 1px 2px color-mix(in srgb, var(--background) 90%, black),
+    -1px -1px 0 var(--background), 1px -1px 0 var(--background),
+    -1px 1px 0 var(--background), 1px 1px 0 var(--background);
+  color: var(--main-color);
+}
+
+.new-tab .open-new-tab {
+  display: none;
+}
+
+.new-tab textarea {
+  margin-top: 20px;
+}
+
+.new-tab .component-container {
+  width: 80%;
+  margin: auto;
+  height: fit-content !important;
+  background: color-mix(in srgb, var(--light-color) 30%, transparent);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px color-mix(in srgb, var(--background) 80%, black);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.new-tab .input-container.result {
+  justify-items: center;
+  margin-left: 0;
+}
+
+.new-tab label {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -147,9 +297,10 @@ span {
 #differences {
   font-family: "Sour Gummy", serif;
   font-size: 18px;
-  display: flex;
-  flex-wrap: wrap;
   font-weight: bold;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  line-height: 1.5;
 }
 
 /* Password Generator */
@@ -215,7 +366,7 @@ span {
   flex-direction: row;
   align-items: center;
   gap: 8px;
-  padding-bottom: 50px; 
+  padding-bottom: 50px;
 }
 
 #sorted-text {
@@ -264,5 +415,9 @@ span {
 
 #reset-btn:hover {
   zoom: 1.05;
-  background: color-mix(in srgb, var(--second-color) 80%, var(--light-color) 20%)
+  background: color-mix(
+    in srgb,
+    var(--second-color) 80%,
+    var(--light-color) 20%
+  );
 }

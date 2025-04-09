@@ -5,6 +5,22 @@
 <link rel="stylesheet" href="text.css" />
 
 <div class="component-container">
+  <!-- Open in a new tab -->
+  <a
+    href="#"
+    onclick="window.open(window.location.pathname, '_blank')"
+    rel="noopener noreferrer"
+    class="open-new-tab"
+    title="Open in a new tab"
+    >⇱</a
+  >
+  <script type="module">
+    import { handleNewTabPage } from "../commonFunctions.js";
+
+    handleNewTabPage();
+  </script>
+
+  <!-- Common Structure -->
   <div class="input-container">
     <textarea
       placeholder="Enter text here..."

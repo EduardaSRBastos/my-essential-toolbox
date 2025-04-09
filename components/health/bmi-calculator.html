@@ -73,4 +73,8 @@
     result.value = Number(bmi.toFixed(1)).toString() + resultCategory;
   }
 </script>
-<script src="../commonFunctions.js"></script>
+<script type="module">
+  import { restrictInput } from "../commonFunctions.js";
+
+  window.restrictInput = restrictInput;
+</script>

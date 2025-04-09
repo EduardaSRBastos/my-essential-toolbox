@@ -111,4 +111,8 @@
       : calculatedValue + "%";
   }
 </script>
-<script src="../commonFunctions.js"></script>
+<script type="module">
+  import { restrictInput } from "../commonFunctions.js";
+
+  window.restrictInput = restrictInput;
+</script>
